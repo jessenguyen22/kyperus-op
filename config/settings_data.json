@@ -26,9 +26,10 @@
     "img_overlay_opacity": 20,
     "spacing_sections": 0,
     "spacing_sections_mobile": 0,
+    "loading_design_mode": true,
     "loading_size": 150,
-    "loading_color": "#0d0d0d",
-    "loading_logo": "shopify://shop_images/kpr-logo-b.png",
+    "loading_color": "#b8b8b8",
+    "loading_logo": "shopify://shop_images/kpr-logo.png",
     "animations": "fade-in",
     "pcard_layout": "1",
     "pcard_alignment": "left",
@@ -296,5 +297,10 @@
         }
       }
     }
+  },
+  "platform_customizations": {
+    "custom_css": [
+      ".m-page-transition {background: #121212 !important; }"
+    ]
   }
 }
