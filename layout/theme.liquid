@@ -66,6 +66,7 @@
 
       echo 'main.css' | asset_url | stylesheet_tag: preload: true
       echo 'kpr-buttons.css' | asset_url | stylesheet_tag
+      echo 'kpr-menu-glitch.css' | asset_url | stylesheet_tag
 
       render 'style-tags'
     -%}
@@ -138,5 +139,6 @@
     {%- endif -%}
     
     <script src="{{ 'kpr-button-glitch.js' | asset_url }}" defer="defer"></script>
+    <script src="{{ 'kpr-menu-glitch.js' | asset_url }}" defer="defer"></script>
   </body>
 </html>

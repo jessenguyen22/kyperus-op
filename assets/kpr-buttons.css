@@ -1,0 +1,220 @@
+/**
+ * KPR Button System - Cyberpunk Style Override
+ */
+
+/* Override Primary Button */
+.m-button--primary,
+.shopify-payment-button__button.shopify-payment-button__button--unbranded,
+.spr-button.spr-button-primary,
+.m-add-to-cart,
+.m-product-quickview-button {
+  background-color: transparent !important;
+  border: 2px solid var(--kpr-primary-color) !important;
+  color: var(--kpr-primary-color) !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.2em !important;
+  font-weight: 700 !important;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s !important;
+}
+
+.m-button--primary:hover,
+.m-button--primary:focus,
+.shopify-payment-button__button.shopify-payment-button__button--unbranded:hover,
+.shopify-payment-button__button.shopify-payment-button__button--unbranded:focus,
+.spr-button.spr-button-primary:hover,
+.spr-button.spr-button-primary:focus,
+.m-add-to-cart:hover,
+.m-add-to-cart:focus,
+.m-product-quickview-button:hover,
+.m-product-quickview-button:focus {
+  background-color: var(--kpr-primary-color) !important;
+  color: var(--kpr-bg-color) !important;
+  border-color: var(--kpr-primary-color) !important;
+  box-shadow: 0 0 25px var(--kpr-primary-color) !important;
+}
+
+.m-button--primary:active,
+.shopify-payment-button__button.shopify-payment-button__button--unbranded:active,
+.spr-button.spr-button-primary:active,
+.m-add-to-cart:active,
+.m-product-quickview-button:active {
+  transform: scale(0.97);
+}
+
+/* Add data-text attribute to all primary buttons for glitch effect */
+.m-button--primary,
+.shopify-payment-button__button.shopify-payment-button__button--unbranded,
+.spr-button.spr-button-primary,
+.m-add-to-cart,
+.m-product-quickview-button {
+  position: relative;
+}
+
+/* Create pseudo-elements for glitch effect */
+.m-button--primary::before,
+.m-button--primary::after,
+.shopify-payment-button__button.shopify-payment-button__button--unbranded::before,
+.shopify-payment-button__button.shopify-payment-button__button--unbranded::after,
+.spr-button.spr-button-primary::before,
+.spr-button.spr-button-primary::after,
+.m-add-to-cart::before,
+.m-add-to-cart::after,
+.m-product-quickview-button::before,
+.m-product-quickview-button::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  background-color: var(--kpr-primary-color);
+  transition: opacity 0.2s ease;
+  pointer-events: none;
+}
+
+.m-button--primary:hover::before,
+.m-button--primary:focus::before,
+.shopify-payment-button__button.shopify-payment-button__button--unbranded:hover::before,
+.shopify-payment-button__button.shopify-payment-button__button--unbranded:focus::before,
+.spr-button.spr-button-primary:hover::before,
+.spr-button.spr-button-primary:focus::before,
+.m-add-to-cart:hover::before,
+.m-add-to-cart:focus::before,
+.m-product-quickview-button:hover::before,
+.m-product-quickview-button:focus::before {
+  opacity: 1;
+  color: var(--kpr-secondary-color);
+  animation: kpr-glitch-anim var(--kpr-glitch-anim-duration)
+    cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+.m-button--primary:hover::after,
+.m-button--primary:focus::after,
+.shopify-payment-button__button.shopify-payment-button__button--unbranded:hover::after,
+.shopify-payment-button__button.shopify-payment-button__button--unbranded:focus::after,
+.spr-button.spr-button-primary:hover::after,
+.spr-button.spr-button-primary:focus::after,
+.m-add-to-cart:hover::after,
+.m-add-to-cart:focus::after,
+.m-product-quickview-button:hover::after,
+.m-product-quickview-button:focus::after {
+  opacity: 1;
+  color: var(--kpr-bg-color);
+  animation: kpr-glitch-anim var(--kpr-glitch-anim-duration)
+    cubic-bezier(0.25, 0.46, 0.45, 0.94) reverse both;
+}
+
+/* Add specific styles for buttons with icons */
+.m-button--primary.m-button--text-with-icon,
+.shopify-payment-button__button.shopify-payment-button__button--unbranded.m-button--text-with-icon,
+.spr-button.spr-button-primary.m-button--text-with-icon,
+.m-add-to-cart.m-button--text-with-icon,
+.m-product-quickview-button.m-button--text-with-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Hide text on hover for glitch effect */
+.m-button--primary:not(.m-button--scroll-top):hover > *:not(::before, ::after),
+.shopify-payment-button__button.shopify-payment-button__button--unbranded:hover > *:not(::before, ::after),
+.spr-button.spr-button-primary:hover > *:not(::before, ::after),
+.m-add-to-cart:hover > *:not(::before, ::after),
+.m-product-quickview-button:hover > *:not(::before, ::after) {
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+/* Support for reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .m-button--primary:hover::before,
+  .m-button--primary:focus::before,
+  .m-button--primary:hover::after,
+  .m-button--primary:focus::after,
+  .shopify-payment-button__button.shopify-payment-button__button--unbranded:hover::before,
+  .shopify-payment-button__button.shopify-payment-button__button--unbranded:focus::before,
+  .shopify-payment-button__button.shopify-payment-button__button--unbranded:hover::after,
+  .shopify-payment-button__button.shopify-payment-button__button--unbranded:focus::after,
+  .spr-button.spr-button-primary:hover::before,
+  .spr-button.spr-button-primary:focus::before,
+  .spr-button.spr-button-primary:hover::after,
+  .spr-button.spr-button-primary:focus::after,
+  .m-add-to-cart:hover::before,
+  .m-add-to-cart:focus::before,
+  .m-add-to-cart:hover::after,
+  .m-add-to-cart:focus::after,
+  .m-product-quickview-button:hover::before,
+  .m-product-quickview-button:focus::before,
+  .m-product-quickview-button:hover::after,
+  .m-product-quickview-button:focus::after {
+    animation: none;
+    opacity: 0;
+  }
+
+  .m-button--primary:hover > *,
+  .shopify-payment-button__button.shopify-payment-button__button--unbranded:hover > *,
+  .spr-button.spr-button-primary:hover > *,
+  .m-add-to-cart:hover > *,
+  .m-product-quickview-button:hover > * {
+    opacity: 1;
+  }
+}
+
+/* Custom glitch animation */
+@keyframes kpr-glitch-anim {
+  0% {
+    transform: translate(0);
+    clip-path: inset(0 0 0 0);
+  }
+  20% {
+    transform: translate(-5px, 3px);
+    clip-path: inset(50% 0 20% 0);
+  }
+  40% {
+    transform: translate(3px, -2px);
+    clip-path: inset(20% 0 60% 0);
+  }
+  60% {
+    transform: translate(-4px, 2px);
+    clip-path: inset(80% 0 5% 0);
+  }
+  80% {
+    transform: translate(4px, -3px);
+    clip-path: inset(30% 0 45% 0);
+  }
+  100% {
+    transform: translate(0);
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+/* Special styling for scroll-top button */
+.m-button--scroll-top.m-button--primary {
+  background-color: transparent !important;
+  border: 2px solid var(--kpr-primary-color) !important;
+  color: var(--kpr-primary-color) !important;
+}
+
+.m-button--scroll-top.m-button--primary:hover,
+.m-button--scroll-top.m-button--primary:focus {
+  background-color: var(--kpr-primary-color) !important;
+  color: var(--kpr-bg-color) !important;
+  border-color: var(--kpr-primary-color) !important;
+  box-shadow: 0 0 25px var(--kpr-primary-color) !important;
+}
+
+.m-button--scroll-top.m-button--primary:active {
+  transform: scale(0.97);
+}
+
+/* Create pseudo-elements for glitch effect */
+.m-button--scroll-top.m-button--primary::before,
+.m-button--scroll-top.m-button--primary::after {
+  display: none !important;
+} 

@@ -65,6 +65,13 @@
   --kpr-secondary-color: {{ settings.kpr_secondary_color | default: "#ff00ff" }};
   --kpr-glitch-anim-duration: {{ settings.kpr_glitch_duration | default: 0.5 }}s;
   
+  /* RGB versions for rgba() usage */
+  {% assign primary_color = settings.kpr_primary_color | default: "#00f7ff" %}
+  {% assign primary_red = primary_color | color_extract: 'red' %}
+  {% assign primary_green = primary_color | color_extract: 'green' %}
+  {% assign primary_blue = primary_color | color_extract: 'blue' %}
+  --kpr-primary-color-rgb: {{ primary_red }}, {{ primary_green }}, {{ primary_blue }};
+  
   /* KPR Button Variables */
   --kpr-btn-border-radius: {{ settings.kpr_btn_border_radius | default: 4 }}px;
   --kpr-btn-font-weight: {{ settings.kpr_btn_font_weight | default: 500 }};

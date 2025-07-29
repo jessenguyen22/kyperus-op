@@ -1,0 +1,169 @@
+/**
+ * KPR Menu Glitch Effect
+ */
+
+/* Remove current underline animation */
+.m-menu__link--main:after {
+  display: none !important;
+}
+
+/* Main menu link hover effect - Base styles */
+.m-menu__link--main,
+.m-footer .m-link-lists--item .m-link,
+.m-footer--bottom-menu-item .m-link,
+.m-footer .m-switcher-dropdown {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s;
+}
+
+/* Make sure links have proper z-index */
+.m-menu__link--main {
+  z-index: 1;
+}
+
+/* Glitch effect for menu */
+.m-menu__link--main:hover,
+.m-footer .m-link-lists--item .m-link:hover,
+.m-footer--bottom-menu-item .m-link:hover,
+.m-footer .m-switcher-dropdown:hover {
+  color: var(--kpr-primary-color) !important;
+  text-shadow: 0 0 8px rgba(var(--kpr-primary-color-rgb), 0.6);
+}
+
+/* Create pseudo-elements for header menu links */
+.m-menu__link--main::before,
+.m-menu__link--main::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  pointer-events: none;
+  z-index: -1;
+  padding: var(--main-link-py) var(--main-link-px);
+}
+
+/* Create pseudo-elements for footer links */
+.m-footer .m-link-lists--item .m-link::before,
+.m-footer .m-link-lists--item .m-link::after,
+.m-footer--bottom-menu-item .m-link::before,
+.m-footer--bottom-menu-item .m-link::after,
+.m-footer .m-switcher-dropdown::before,
+.m-footer .m-switcher-dropdown::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* Override for footer links to ensure proper alignment */
+.m-footer .m-link-lists--item .m-link::before,
+.m-footer .m-link-lists--item .m-link::after {
+  justify-content: flex-start; /* Align to left like the original link */
+}
+
+.m-footer--bottom-menu-item .m-link::before,
+.m-footer--bottom-menu-item .m-link::after,
+.m-footer .m-switcher-dropdown::before,
+.m-footer .m-switcher-dropdown::after {
+  justify-content: center; /* These are usually center aligned */
+}
+
+/* Animation for menu header links */
+.m-menu__link--main:hover::before {
+  opacity: 0.8;
+  color: var(--kpr-secondary-color);
+  animation: kpr-menu-glitch-anim var(--kpr-glitch-anim-duration) cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+.m-menu__link--main:hover::after {
+  opacity: 0.8;
+  color: var(--kpr-primary-color);
+  animation: kpr-menu-glitch-anim var(--kpr-glitch-anim-duration) cubic-bezier(0.25, 0.46, 0.45, 0.94) reverse both;
+}
+
+/* Animation for footer links */
+.m-footer .m-link-lists--item .m-link:hover::before,
+.m-footer--bottom-menu-item .m-link:hover::before,
+.m-footer .m-switcher-dropdown:hover::before {
+  opacity: 0.8;
+  color: var(--kpr-secondary-color);
+  animation: kpr-menu-glitch-anim var(--kpr-glitch-anim-duration) cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+.m-footer .m-link-lists--item .m-link:hover::after,
+.m-footer--bottom-menu-item .m-link:hover::after,
+.m-footer .m-switcher-dropdown:hover::after {
+  opacity: 0.8;
+  color: var(--kpr-primary-color);
+  animation: kpr-menu-glitch-anim var(--kpr-glitch-anim-duration) cubic-bezier(0.25, 0.46, 0.45, 0.94) reverse both;
+}
+
+/* Special glitch animation for menu */
+@keyframes kpr-menu-glitch-anim {
+  0% {
+    transform: translate(0);
+    clip-path: inset(0 0 0 0);
+  }
+  20% {
+    transform: translate(-3px, 2px);
+    clip-path: inset(30% 0 50% 0);
+  }
+  40% {
+    transform: translate(2px, -1px);
+    clip-path: inset(10% 0 40% 0);
+  }
+  60% {
+    transform: translate(-2px, 1px);
+    clip-path: inset(60% 0 5% 0);
+  }
+  80% {
+    transform: translate(2px, -2px);
+    clip-path: inset(20% 0 30% 0);
+  }
+  100% {
+    transform: translate(0);
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+/* Override for footer links */
+.m-footer .m-link-lists--item .m-link {
+  position: relative;
+  display: inline-block;
+}
+
+/* Additional hover state for footer links */
+.m-footer .m-link-lists--item:hover .m-link {
+  color: var(--kpr-primary-color) !important;
+}
+
+/* Support for reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .m-menu__link--main:hover::before,
+  .m-menu__link--main:hover::after,
+  .m-footer .m-link-lists--item .m-link:hover::before,
+  .m-footer .m-link-lists--item .m-link:hover::after,
+  .m-footer--bottom-menu-item .m-link:hover::before,
+  .m-footer--bottom-menu-item .m-link:hover::after,
+  .m-footer .m-switcher-dropdown:hover::before,
+  .m-footer .m-switcher-dropdown:hover::after {
+    animation: none;
+    opacity: 0;
+  }
+} 
