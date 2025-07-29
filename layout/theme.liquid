@@ -65,6 +65,7 @@
       render 'critical-css'
 
       echo 'main.css' | asset_url | stylesheet_tag: preload: true
+      echo 'kpr-buttons.css' | asset_url | stylesheet_tag
 
       render 'style-tags'
     -%}
@@ -135,5 +136,7 @@
     {%- if settings.enable_cart_drawer and template != 'cart' -%}
       {% render 'cart-drawer' %}
     {%- endif -%}
+    
+    <script src="{{ 'kpr-button-glitch.js' | asset_url }}" defer="defer"></script>
   </body>
 </html>

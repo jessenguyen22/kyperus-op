@@ -1,0 +1,80 @@
+{% comment %}
+  KPR Button Component - Cyberpunk Style
+  
+  Usage:
+  {%- render 'kpr-button', 
+    text: 'Click me',                   
+    url: product.url,                   
+    size: '',                           
+    disabled: false,                    
+    full_width: false,                  
+    custom_class: '',
+    html_tag: 'a',                 
+    html_attributes: ''                 
+  -%}
+  
+  Parameters:
+  - text: Button text (required)
+  - url: Button URL (optional, defaults to "#")
+  - size: Button size (optional) - options: sm, lg
+  - disabled: Whether button is disabled (optional)
+  - full_width: Whether button should take full width (optional)
+  - custom_class: Additional custom classes (optional)
+  - html_tag: HTML tag to use (optional, defaults to "a") - options: a, button, div, span
+  - html_attributes: Additional HTML attributes (optional)
+{% endcomment %}
+
+{%- liquid
+  assign button_size = size | default: ''
+  assign button_url = url | default: '#'
+  assign button_text = text
+  assign button_disabled = disabled | default: false
+  assign button_full_width = full_width | default: false
+  assign button_custom_class = custom_class | default: ''
+  assign html_element = html_tag | default: 'a'
+  
+  # Set up button classes
+  assign button_classes = 'kpr-btn'
+  
+  # Add size class if provided
+  if button_size != ''
+    assign button_classes = button_classes | append: ' kpr-btn-' | append: button_size
+  endif
+  
+  # Add full width class if needed
+  if button_full_width
+    assign button_classes = button_classes | append: ' kpr-btn-block'
+  endif
+  
+  # Add custom classes if provided
+  if button_custom_class != blank
+    assign button_classes = button_classes | append: ' ' | append: button_custom_class
+  endif
+-%}
+
+{%- case html_element -%}
+  {%- when 'a' -%}
+    <a href="{{ button_url }}" 
+      class="{{ button_classes }}" 
+      data-text="{{ button_text }}"
+      {% if button_disabled %}disabled aria-disabled="true"{% endif %}
+      {{ html_attributes }}>
+      <span class="kpr-btn-text">{{ button_text }}</span>
+    </a>
+  {%- when 'button' -%}
+    <button 
+      class="{{ button_classes }}"
+      data-text="{{ button_text }}" 
+      {% if button_disabled %}disabled aria-disabled="true"{% endif %}
+      {{ html_attributes }}>
+      <span class="kpr-btn-text">{{ button_text }}</span>
+    </button>
+  {%- else -%}
+    <{{ html_element }} 
+      class="{{ button_classes }}" 
+      data-text="{{ button_text }}"
+      {% if button_disabled %}disabled aria-disabled="true"{% endif %}
+      {{ html_attributes }}>
+      <span class="kpr-btn-text">{{ button_text }}</span>
+    </{{ html_element }}>
+{%- endcase -%} 

@@ -1,0 +1,69 @@
+{% layout 'theme' %}
+
+<style>
+  .demo-section {
+    margin-bottom: 30px;
+  }
+  .button-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 15px;
+    align-items: center;
+  }
+  .demo-heading {
+    margin-bottom: 15px;
+    border-bottom: 1px solid var(--kpr-primary-color);
+    padding-bottom: 5px;
+  }
+  .bg-dark {
+    background-color: var(--kpr-bg-color);
+    padding: 30px;
+    margin-bottom: 30px;
+    color: white;
+  }
+</style>
+
+<div class="page-width page-width--narrow m-section-py">
+  <h1 class="h2 text-center">KPR Cyberpunk Button Demo</h1>
+  
+  <div class="bg-dark">
+    <div class="demo-section">
+      <h2 class="h3 demo-heading">Standard Button</h2>
+      <div class="button-row">
+        {% render 'kpr-button', text: 'INITIATE_CONNECTION' %}
+      </div>
+    </div>
+    
+    <div class="demo-section">
+      <h2 class="h3 demo-heading">Button Sizes</h2>
+      <div class="button-row">
+        {% render 'kpr-button', text: 'SMALL_BUTTON', size: 'sm' %}
+        {% render 'kpr-button', text: 'NORMAL_BUTTON' %}
+        {% render 'kpr-button', text: 'LARGE_BUTTON', size: 'lg' %}
+      </div>
+    </div>
+    
+    <div class="demo-section">
+      <h2 class="h3 demo-heading">Full Width Button</h2>
+      <div>
+        {% render 'kpr-button', text: 'FULL_WIDTH_BUTTON', full_width: true %}
+      </div>
+    </div>
+    
+    <div class="demo-section">
+      <h2 class="h3 demo-heading">Disabled Button</h2>
+      <div class="button-row">
+        {% render 'kpr-button', text: 'SYSTEM_LOCKED', disabled: true %}
+      </div>
+    </div>
+    
+    <div class="demo-section">
+      <h2 class="h3 demo-heading">Button HTML Tags</h2>
+      <div class="button-row">
+        {% render 'kpr-button', text: 'ANCHOR_LINK', html_tag: 'a', url: '#' %}
+        {% render 'kpr-button', text: 'FORM_SUBMIT', html_tag: 'button', html_attributes: 'type="submit"' %}
+      </div>
+    </div>
+  </div>
+</div> 

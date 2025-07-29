@@ -112,6 +112,43 @@
     ]
   },
   {
+    "name": "KPR Buttons",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Cyberpunk Button Style"
+      },
+      {
+        "type": "color",
+        "id": "kpr_primary_color",
+        "label": "Primary Button Color",
+        "default": "#00f7ff"
+      },
+      {
+        "type": "color",
+        "id": "kpr_secondary_color",
+        "label": "Glitch Effect Color",
+        "default": "#ff00ff"
+      },
+      {
+        "type": "color",
+        "id": "kpr_bg_color",
+        "label": "Button Background on Hover",
+        "default": "#121212"
+      },
+      {
+        "type": "range",
+        "id": "kpr_glitch_duration",
+        "min": 0.2,
+        "max": 1.0,
+        "step": 0.1,
+        "unit": "s",
+        "label": "Glitch Animation Duration",
+        "default": 0.5
+      }
+    ]
+  },
+  {
     "name": "Typography",
     "settings": [
       {
