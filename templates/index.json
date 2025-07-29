@@ -47,9 +47,47 @@
         "enable_preload_image": false,
         "custom_class": ""
       }
+    },
+    "image_comparison_AzRiP8": {
+      "type": "image-comparison",
+      "blocks": {
+        "image_bpqyEP": {
+          "type": "image",
+          "settings": {
+            "heading": "Before"
+          }
+        },
+        "image_ifWxn4": {
+          "type": "image",
+          "settings": {
+            "heading": "After"
+          }
+        }
+      },
+      "block_order": [
+        "image_bpqyEP",
+        "image_ifWxn4"
+      ],
+      "name": "Before/after image slider",
+      "settings": {
+        "container": "container-fluid",
+        "color_scheme": "",
+        "heading": "Before/after image slider",
+        "heading_size": "h3",
+        "subheading": "",
+        "description": "",
+        "header_alignment": "center",
+        "layout": "horizontal",
+        "image_height": "adapt",
+        "padding_top": 50,
+        "padding_bottom": 50,
+        "custom_class": "",
+        "enable_preload_image": false
+      }
     }
   },
   "order": [
-    "custom_content_xALaMf"
+    "custom_content_xALaMf",
+    "image_comparison_AzRiP8"
   ]
 }
