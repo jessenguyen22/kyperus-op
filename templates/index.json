@@ -9,6 +9,62 @@
  */
 {
   "sections": {
+    "hotspots_image_UwipVN": {
+      "type": "hotspots-image",
+      "blocks": {
+        "hotspot_gwnQxG": {
+          "type": "hotspot",
+          "settings": {
+            "top": 30,
+            "left": 48,
+            "m_top": 13,
+            "m_left": 66,
+            "heading": "Talk about your brand",
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post.<br> Add details on availability, style, or even provide a review.</p>"
+          }
+        },
+        "hotspot_kP3fiF": {
+          "type": "hotspot",
+          "settings": {
+            "top": 75,
+            "left": 40,
+            "m_top": 45,
+            "m_left": 75,
+            "heading": "Talk about your brand",
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post.<br> Add details on availability, style, or even provide a review.</p>"
+          }
+        },
+        "hotspot_RdxU4h": {
+          "type": "hotspot",
+          "settings": {
+            "top": 60,
+            "left": 64,
+            "m_top": 80,
+            "m_left": 32,
+            "heading": "Talk about your brand",
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post.<br> Add details on availability, style, or even provide a review.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "hotspot_gwnQxG",
+        "hotspot_kP3fiF",
+        "hotspot_RdxU4h"
+      ],
+      "name": "Hotspots image",
+      "settings": {
+        "container": "container-fluid",
+        "color_scheme": "",
+        "image_max_width": 32,
+        "heading_size": "h4",
+        "padding_top": 50,
+        "padding_bottom": 50,
+        "custom_class": "",
+        "animations": "inherit",
+        "enable_bg_zoom_effect": true,
+        "enable_preload_image": false
+      }
+    },
     "custom_content_xALaMf": {
       "type": "custom-content",
       "blocks": {
@@ -87,6 +143,7 @@
     }
   },
   "order": [
+    "hotspots_image_UwipVN",
     "custom_content_xALaMf",
     "image_comparison_AzRiP8"
   ]
