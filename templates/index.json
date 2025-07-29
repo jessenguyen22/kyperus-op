@@ -102,6 +102,7 @@
         "1621243260e1af0c20-1",
         "1621243260e1af0c20-2"
       ],
+      "disabled": true,
       "settings": {
         "container": "w-full",
         "slideshow_height": "adapt",
