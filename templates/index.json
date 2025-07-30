@@ -19,9 +19,9 @@
         "show_on_mobile": true,
         "background_video": "shopify://files/videos/VidWeb_ver3_c772640e-2c66-4295-863e-e0f7b73fd287.mp4",
         "autoplay": true,
-        "traditional_lottie_url": "",
-        "hybrid_lottie_url": "",
-        "modern_lottie_url": ""
+        "traditional_lottie_url": "https://cdn.shopify.com/s/files/1/0580/6994/2352/files/Traditional.json?v=1753152443",
+        "hybrid_lottie_url": "https://cdn.shopify.com/s/files/1/0580/6994/2352/files/Skull_580x580.json?v=1753323916",
+        "modern_lottie_url": "https://cdn.shopify.com/s/files/1/0580/6994/2352/files/poision_580x580.json?v=1753323919"
       }
     }
   },
