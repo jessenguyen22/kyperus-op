@@ -11,6 +11,7 @@
   "sections": {
     "kpr_hero_banner_8UbzRF": {
       "type": "kpr-hero-banner",
+      "disabled": true,
       "name": "KPR Hero Basic",
       "settings": {
         "custom_class": "",
@@ -23,9 +24,43 @@
         "hybrid_lottie_url": "https://cdn.shopify.com/s/files/1/0580/6994/2352/files/Skull_580x580.json?v=1753323916",
         "modern_lottie_url": "https://cdn.shopify.com/s/files/1/0580/6994/2352/files/poision_580x580.json?v=1753323919"
       }
+    },
+    "video_hero_GVE8ki": {
+      "type": "video-hero",
+      "name": "Video hero",
+      "settings": {
+        "color_scheme": "",
+        "container": "w-full",
+        "hero_size": "adapt",
+        "video_ratio": "16/9",
+        "show_overlay": false,
+        "video_type": "shopify",
+        "shopify_video": "shopify://files/videos/VidWeb_ver3_c772640e-2c66-4295-863e-e0f7b73fd287.mp4",
+        "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+        "content_in_container": false,
+        "content_position": "center middle",
+        "text_alignment": "center",
+        "text_size": "medium",
+        "text_color": "white",
+        "title": "",
+        "subtitle": "",
+        "text": "",
+        "button_label": "",
+        "button_link": "",
+        "button_style": "m-button--primary",
+        "button_size": "",
+        "button_label_2": "",
+        "button_link_2": "",
+        "button_style_2": "m-button--primary",
+        "button_size_2": "",
+        "use_content_above": false,
+        "custom_class": "",
+        "animations": "inherit"
+      }
     }
   },
   "order": [
-    "kpr_hero_banner_8UbzRF"
+    "kpr_hero_banner_8UbzRF",
+    "video_hero_GVE8ki"
   ]
 }
