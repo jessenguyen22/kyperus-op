@@ -31,8 +31,8 @@
       "settings": {
         "color_scheme": "",
         "container": "w-full",
-        "hero_size": "adapt",
-        "video_ratio": "21/9",
+        "hero_size": "large",
+        "video_ratio": "16/9",
         "show_overlay": false,
         "video_type": "shopify",
         "shopify_video": "shopify://files/videos/VidWeb_ver3_c772640e-2c66-4295-863e-e0f7b73fd287.mp4",
